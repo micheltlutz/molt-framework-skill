@@ -58,11 +58,11 @@ claude plugin validate plugins/molt-framework
 Refresh the bundled pages from the Molt repository (needs `gh`, logged in):
 
 ```bash
-bash scripts/sync-references.sh            # from `develop`
+bash scripts/sync-references.sh            # from the latest Molt release
 bash scripts/sync-references.sh <git-ref>  # from a tag or a commit
 ```
 
-After syncing, re-run the checks in `docs/retrieval-checks.md`, and re-read `SKILL.md`: it names the Molt versions in prose ("published 1.x", "unreleased 2.0") and those sentences need a hand edit when a release is cut.
+After syncing, re-run the checks in `docs/retrieval-checks.md`, and re-read `SKILL.md`: it names the Molt versions in prose ("1.x and 2.x") and those sentences need a hand edit when a new major version is cut.
 
 ## Releasing
 

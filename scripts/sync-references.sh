@@ -2,11 +2,11 @@
 # Refreshes the two reference pages bundled with the skill from the Molt repository, and stamps
 # each with where it came from. Needs the GitHub CLI (`gh`), logged in.
 #
-# Usage: bash scripts/sync-references.sh [git-ref]      (default: develop)
+# Usage: bash scripts/sync-references.sh [git-ref]      (default: the latest GitHub release)
 set -euo pipefail
 
 REPO="micheltlutz/molt"
-REF="${1:-develop}"
+REF="${1:-$(gh api "repos/$REPO/releases/latest" --jq .tag_name)}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DEST="$ROOT/plugins/molt-framework/skills/using-molt-framework/references"
 

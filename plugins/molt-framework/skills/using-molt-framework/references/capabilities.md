@@ -1,4 +1,4 @@
-> Snapshot of the Molt repository's `docs/capabilities.md` at `develop` (2300d15), taken 2026-10-22.
+> Snapshot of the Molt repository's `docs/capabilities.md` at `v2.0.0` (5bb7d4e), taken 2026-10-22.
 > Check on crates.io whether a published version already ships it: if the project's installed
 > version has `docs/capabilities.md`, read that copy instead. Links in it are relative to the Molt crate
 > and do not resolve here.

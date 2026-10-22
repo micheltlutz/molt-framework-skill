@@ -9,7 +9,7 @@ Molt builds a tree of values and renders it once to a `String`. This skill is wh
 
 ## First: which version?
 
-`grep -A1 'name = "molt-framework"' Cargo.lock`. Published 1.x and the unreleased 2.0 differ (text order, `<html>` attributes, SEO setters, directory copy, hashed assets). `references/capabilities.md` section 3 has a column per version. If your version lacks an API, use the recipe below; do not search the source for it. On 2.x, prefer the new APIs listed in that table over the recipes.
+`grep -A1 'name = "molt-framework"' Cargo.lock`. 1.x and 2.x (2.0.0 is on crates.io) differ (text order, `<html>` attributes, SEO setters, directory copy, hashed assets). `references/capabilities.md` section 3 has a column per version. If your version lacks an API, use the recipe below; do not search the source for it. On 2.x, prefer the new APIs listed in that table over the recipes.
 
 ## Upgrading a project to 2.x
 
@@ -55,5 +55,5 @@ Render and assert the exact string, run `accessibility::audit` on the tree, comp
 
 - `references/capabilities.md`: module map, what exists per version, behaviours that surprise.
 - `references/pitfalls.md`: symptom to fix.
-- Version-matched crate: `~/.cargo/registry/src/*/molt-framework-<ver>/`. From 2.x it ships `llms.txt`, `docs/capabilities.md` and `docs/pitfalls.md`: read those copies first; the files in `references/` are the same pages for 1.x projects. Always there: `README.md`, `GETTING_STARTED.md`, `docs/tag-catalog.md`, `examples/`.
+- Version-matched crate: `~/.cargo/registry/src/*/molt-framework-<ver>/`. From 2.x it ships `llms.txt`, `docs/agents.md`, `docs/capabilities.md` and `docs/pitfalls.md`: read those copies first; the files in `references/` are the same pages for 1.x projects. Always there: `README.md`, `GETTING_STARTED.md`, `docs/tag-catalog.md`, `examples/`.
 - Working inside the Molt repository itself? Use its own `.claude/skills/molt`.
