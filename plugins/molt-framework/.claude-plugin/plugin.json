@@ -1,7 +1,7 @@
 {
   "name": "molt-framework",
   "displayName": "Molt Framework",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Skill for projects that build HTML with molt-framework (Rust): which APIs exist in the installed version, behaviours that surprise, and a symptom-to-fix table. Offline: it reads bundled snapshots and the crate's own docs.",
   "author": {
     "name": "Michel Lutz",

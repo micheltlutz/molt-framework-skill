@@ -13,6 +13,7 @@ They are written as plain text on purpose. `claude plugin eval` runs cases from 
 | Q3 | Is there a `text_content()` to read a tree's text in a test? | No, on purpose: text is stored escaped and `<script>`/`<style>` content is raw in the same field. Use `find(..).render()` (2.x) or assert on rendered substrings. | `capabilities.md` section 5 |
 | Q4 | After moving to 2.x, `clean(true)` fails with `SsgError::UnsafeCleanTarget` on an old `dist`. Why, and how do I get unstuck? Does the fix leave an extra file? | 2.x only empties a directory that is missing, empty or holds `.molt-output`; a 1.x `dist` has none, and nothing is removed. Delete `dist` once, or `touch dist/.molt-output`. The marker is one line of text and is uploaded with the site. | `SKILL.md` "Upgrading a project to 2.x" |
 | Q5 | My function takes a parameter called `title` and calls `title().text(..)`: `E0618`. Why? | The prelude brings constructors named like tags; the parameter shadows `title()`. Rename it (`page_title`). `Document::new` takes the language; the title goes in `head_children([title().text(..)])`. | `SKILL.md` rules |
+| Q6 | Which published version of molt-framework is the newest according to the skill, and which agent-facing files does that version ship inside the crate? | 2.0.0 (on crates.io). The crate ships `llms.txt`, `docs/agents.md`, `docs/capabilities.md` and `docs/pitfalls.md`. | `SKILL.md` "First: which version?" and "Read next" |
 
 ## Application tasks
 
@@ -30,3 +31,5 @@ Both run on a throwaway crate pinned to `molt-framework = "=1.1.1"`, with `cargo
 | With the skill, with signatures added | 9 | 62.0k | 70 s |
 
 Task A: 9 calls without the skill, 7 with it (time inconclusive: 61 s against 99 s). Both versions were correct on the first try; the skill saves discovery cost, not correctness. Q1 to Q3 passed on the first run, Q4 failed until the "Upgrading to 2.x" section was added, then passed.
+
+Q1 to Q6 on 0.2.0 (2026-10-22, Sonnet, one sample, skill files only): all six correct, each with the right file and section.
