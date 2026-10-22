@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "molt",
+  "description": "Claude Code skills for building HTML with the Molt framework (molt-framework on crates.io).",
+  "owner": {
+    "name": "Michel Lutz",
+    "url": "https://github.com/micheltlutz"
+  },
+  "plugins": [
+    {
+      "name": "molt-framework",
+      "description": "What to check before reading the molt-framework source: which APIs exist in the installed version, the behaviours that surprise, and the symptom-to-fix table.",
+      "source": "./plugins/molt-framework",
+      "author": { "name": "Michel Lutz" },
+      "homepage": "https://www.molt-framework.io",
+      "category": "development"
+    }
+  ]
+}

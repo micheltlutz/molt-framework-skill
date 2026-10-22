@@ -11,7 +11,7 @@ It is what an agent should check **before reading the crate's source**: which AP
 /plugin install molt-framework@molt
 ```
 
-The marketplace is called `molt`; the plugin is called `molt-framework`.
+The marketplace is called `molt`; the plugin is called `molt-framework`. Without a GitHub SSH key, set `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` so installs from inside a session clone over HTTPS.
 
 ## What it does
 
@@ -31,6 +31,7 @@ Two reference pages are bundled (`references/capabilities.md`, `references/pitfa
 .claude-plugin/marketplace.json            the marketplace ("molt")
 plugins/molt-framework/
   .claude-plugin/plugin.json               the plugin
+  README.md, LICENSE, PRIVACY.md, icon.png required or read by the directory listing
   skills/using-molt-framework/
     SKILL.md
     references/capabilities.md             snapshot of Molt's docs/capabilities.md
@@ -66,11 +67,13 @@ After syncing, re-run the checks in `docs/retrieval-checks.md`, and re-read `SKI
 ## Releasing
 
 1. Update `CHANGELOG.md`.
-2. Raise `version` in **both** `plugins/molt-framework/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`.
-3. `claude plugin validate .` and `claude plugin validate plugins/molt-framework`.
-4. Commit, then tag with `claude plugin tag` (see `claude plugin tag --help`) and push.
+2. Raise `version` in `plugins/molt-framework/.claude-plugin/plugin.json`. It is declared only there: `marketplace.json` has no `version`, because the manifest's value wins and a second copy can only drift. Without a new `version`, installed copies are not updated.
+3. `claude plugin validate --strict .` and `claude plugin validate --strict plugins/molt-framework`.
+4. Commit and push, then tag with `claude plugin tag plugins/molt-framework --push` (it creates `molt-framework--v<version>`).
 
-People update with `/plugin update molt-framework`.
+People update with `claude plugin update molt-framework@molt`.
+
+The directory submission (claude.ai/directory/manage) follows the `main` branch with `plugins/molt-framework` as the plugin path, so a push is also how a new version reaches it.
 
 ## Installed a personal copy before?
 

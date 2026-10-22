@@ -1,0 +1,18 @@
+{
+  "name": "molt-framework",
+  "displayName": "Molt Framework",
+  "version": "0.1.0",
+  "description": "Skill for projects that build HTML with molt-framework (Rust): which APIs exist in the installed version, behaviours that surprise, and a symptom-to-fix table. Offline: it reads bundled snapshots and the crate's own docs.",
+  "author": {
+    "name": "Michel Lutz",
+    "url": "https://github.com/micheltlutz"
+  },
+  "homepage": "https://www.molt-framework.io",
+  "repository": "https://github.com/micheltlutz/molt-framework-skill",
+  "license": "MIT",
+  "icon": "./icon.png",
+  "documentationUrl": "https://github.com/micheltlutz/molt-framework-skill/blob/main/plugins/molt-framework/README.md",
+  "supportUrl": "https://github.com/micheltlutz/molt-framework-skill/issues",
+  "privacyPolicyUrl": "https://github.com/micheltlutz/molt-framework-skill/blob/main/plugins/molt-framework/PRIVACY.md",
+  "keywords": ["rust", "html", "molt", "molt-framework", "static-site", "wasm"]
+}
